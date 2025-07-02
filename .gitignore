@@ -1,0 +1,11 @@
+*.o
+*.out
+*.class
+
+*.log
+
+.DC_Store
+*.png
+*.jpg
+
+*.orig
