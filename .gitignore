@@ -1,6 +1,7 @@
 *.o
 *.out
 *.class
+.ccls-cashe/
 
 *.log
 
