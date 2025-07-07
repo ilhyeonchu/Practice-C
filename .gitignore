@@ -1,7 +1,7 @@
 *.o
 *.out
 *.class
-.ccls-cashe/
+/.ccls-cashe/
 
 *.log
 
