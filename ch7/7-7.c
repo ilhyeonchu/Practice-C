@@ -26,6 +26,8 @@ int main () {
     printf ("f1 = %.2f\n", (float) i1);
 
     printf ("%.2f\n", absoluteValue(-6.0)/4 );
+    
+    printf ("%.2f\n", absoluteValue((-6.0/4)));
 
     return 0;
 }
