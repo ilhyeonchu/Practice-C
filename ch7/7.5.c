@@ -2,6 +2,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
     *@brief 제곱근 구하기
@@ -15,8 +16,8 @@ double squareRoot (double n, double e) {
     double absoluteValue (double x);
     
     if ( n < 0 ) {
-        printf ("Negative argument to square root");
-        return -1.0;
+        printf ("Negative argument to square root\n");
+        exit(0);
     }
     
     guess2 = ( n + 1.0 ) / 2.0;
