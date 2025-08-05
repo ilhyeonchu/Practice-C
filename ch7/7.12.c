@@ -1,27 +1,53 @@
 // transepose matrix
 #include <stdio.h>
+#include <stdlib.h>
 
-void transeposeMatrix(int a[4][5], int b[5][4]) {
-    for (int i = 0 ; i < 4 ; i++) {
-        for (int j = 0 ; j < 5 ; j++) {
+void transeposeMatrix(int** a, int** b, int row, int col) {
+    for (int i = 0 ; i < row ; i++ ) {
+        for (int j = 0 ; j < col ; j++ ) {
             b[j][i] = a[i][j];
         }
     }
 }
-
 int main() {
-    void transeposeMatrix(int a[4][5], int b[5][4]);
-    int a[4][5], b[5][4];
+    void transeposeMatrix(int** a, int** b, int row, int col);
+    int row, col; 
+    int** a;
+    int** b;
+
+    printf("Input row and colum.\n");
+    scanf("%i %i", &row, &col);
     
-    printf("Input 4*5 Matrix.\n");
-    for (int i = 0 ; i < 4 ; i++) {
-        scanf("%i %i %i %i %i", &a[i][0], &a[i][1], &a[i][2], &a[i][3], &a[i][4]);
+    // int a[row][col], b[col][row];
+    b = (int**)malloc(col*sizeof(int *));
+    for (int i = 0 ; i < col ; i++) {
+        b[i] = (int *)malloc(row*sizeof(int));
+    }
+    a = (int**)malloc(row*sizeof(int *));
+    for (int i = 0 ; i < row ; i++) {
+        a[i] = (int *)malloc(col*sizeof(int));
     }
 
-    transeposeMatrix(a, b);
-
-    for (int i = 0 ; i < 5 ; i++) {
-        printf("%i %i %i %i \n", b[i][0], b[i][1], b[i][2], b[i][3]);
+    printf("Input Matrix.\n");
+    for (int i = 0 ; i < row ; i++) {
+        for (int j = 0 ; j < col ; j++) {
+            scanf("%d", &a[i][j]);
+        }
     }
+    printf("\n");
+
+    transeposeMatrix(a, b, row, col);
+
+    for (int i = 0 ; i < col ; i++) {
+        for (int j = 0 ; j < row ; j++) {
+            printf("%d ", b[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (int i = 0 ; i < col ; i++) {
+        free(b[i]);
+    }
+    free(b);
 
 }
